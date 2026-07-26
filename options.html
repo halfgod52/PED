@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PED Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>PED Options</h1>
+    
+    <div class="section">
+      <h2>Custom Brands</h2>
+      <p>Add domains that you want to protect from lookalikes (e.g., your company's domain).</p>
+      <div class="input-group">
+        <input type="text" id="brandInput" placeholder="e.g. acme.com">
+        <button id="addBrandBtn" class="btn">Add</button>
+      </div>
+      <ul id="brandList" class="list"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Trusted Senders</h2>
+      <p>Emails from these domains will bypass scanning and always show as safe.</p>
+      <div class="input-group">
+        <input type="text" id="trustedInput" placeholder="e.g. trusted-partner.com">
+        <button id="addTrustedBtn" class="btn">Add</button>
+      </div>
+      <ul id="trustedList" class="list"></ul>
+    </div>
+
+    <div id="status">Settings saved automatically.</div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

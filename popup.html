@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+      <span class="shield">🛡</span>
+      <div>
+        <div class="brand">PED</div>
+        <div class="tagline">Phishing Email Detector</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="Extension modes">
+    <button class="tab active" data-tab="scan" role="tab" aria-selected="true">Scan Email</button>
+    <button class="tab" data-tab="inbox" role="tab" aria-selected="false">Inbox Check</button>
+  </div>
+
+  <!-- SCAN TAB -->
+  <div id="tab-scan" class="tab-content active">
+    <p class="hint">Open an email in Gmail, then click scan.</p>
+    <button id="scanBtn" class="btn-primary">
+      <span id="scanIcon" class="btn-icon">🔍</span> Scan This Email
+    </button>
+
+    <div id="result-box" class="result-box hidden" aria-live="polite">
+      <div id="result-label" class="result-label"></div>
+      <div id="dom-warning" class="dom-warning hidden"></div>
+
+      <div id="risk-meter" class="risk-meter hidden">
+        <div class="risk-seg" data-level="safe">Safe</div>
+        <div class="risk-seg" data-level="suspicious">Suspicious</div>
+        <div class="risk-seg" data-level="phishing">Phishing</div>
+      </div>
+      <div id="result-score" class="result-score"></div>
+    </div>
+
+    <div id="flags-groups"></div>
+
+    <div id="allowlist-container" class="allowlist-container hidden">
+      <button id="allowlistBtn" class="btn-secondary">Flagged by mistake? Trust sender</button>
+    </div>
+
+    <div class="history-section">
+      <h3>Recent Scans</h3>
+      <ul id="history-list" class="history-list"></ul>
+    </div>
+  </div>
+
+  <!-- INBOX TAB -->
+  <div id="tab-inbox" class="tab-content">
+    <p class="hint">Scans visible emails in your inbox list.</p>
+    <button id="inboxBtn" class="btn-primary">
+      <span class="btn-icon">📬</span> Check Inbox
+    </button>
+    <div id="inbox-summary" class="inbox-summary hidden"></div>
+    <div id="inbox-result"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
